@@ -1,5 +1,7 @@
-document.querySelector('button').addEventListener('click', handleClick);
+const numDrumBtn = document.querySelectorAll('.drum').length;
 
-function handleClick() {
-    console.log('i work!');
+for (var i = 0; i < numDrumBtn; i++) {
+    document.querySelectorAll('.drum')[i].addEventListener('click', function() {
+        console.log('i work!');
+    });
 }
