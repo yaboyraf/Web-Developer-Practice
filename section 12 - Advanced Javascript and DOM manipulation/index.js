@@ -7,12 +7,16 @@ for (var i = 0; i < numDrumBtn; i++) {
 
         makeSound(buttonInnerHTML);
 
+        buttonAnimation(buttonInnerHTML);
+
     });
 }
 
 //Detecting keyboard presses
 document.addEventListener('keypress', function(event) {
     makeSound(event.key);
+
+    buttonAnimation(event.key);
 });
 
 function makeSound(key) {
@@ -47,4 +51,14 @@ function makeSound(key) {
             break;
         default: console.log(buttonInnerHTML);
     }
+}
+
+function buttonAnimation(currentKey) {
+    const activeButton = document.querySelector('.' + currentKey);
+
+    activeButton.classList.add('pressed');
+
+    setTimeout(function(){
+        activeButton.classList.remove('pressed')
+    }, 100);
 }
