@@ -1,1 +1,2 @@
-alert('i work!')
+
+$('h1').css('color', 'green');
