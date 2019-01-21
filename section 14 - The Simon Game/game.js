@@ -31,6 +31,9 @@ function nextSequence() {
 //4.1. use JQuery to create a handler function to detect clicks
 $('.btn').click(function() {
     //4.2 
-    const userChosenColor = this.attr('id');
+    const userChosenColor = $(this).attr('id');
+    //4.4. add contents of the variable userChosenColor to the end of the new userClickedPattern
+    userClickedPattern.push(userChosenColor);
 
+    console.log('the pattern is: ' + userClickedPattern);
 });
