@@ -23,10 +23,11 @@ $('.btn').click(function() {
     userClickedPattern.push(userChosenColor);
     //5.1
     playSound(userChosenColor);
-
     animatePress(userChosenColor);
+    
+    console.log('the user pattern is: ' + userClickedPattern);
 
-    //console.log('the pattern is: ' + userClickedPattern);
+    checkAnswer(userClickedPattern.length - 1);
 });
 
 //2.1. make a function called nextSequence
@@ -36,20 +37,29 @@ function nextSequence() {
     $('#level-title').text('Level ' + level);
     //2.2. generate a number between 0 and 3
     const randomNumber = Math.floor(Math.random() * 4);
-
     //2.4. create a variable called randomChosenColor and use randomNumber to select a random color from buttonColors array
     const randomChosenColor = buttonColors[randomNumber];
-
     //2.6. add randomChosenColor from step 4 to the end of gamePattern;
     gamePattern.push(randomChosenColor);
-    //console.log('the color is: ' + randomChosenColor);
-
+    console.log('the color is: ' + randomChosenColor);
     //3.1. use JQuery to select the button with the same id as randomChosenColor
     $('#' + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100); //3.2. flash animation
-    
     //5.4. when user clicks a color, sound will play
     playSound(randomChosenColor);
 };
+
+function checkAnswer(currentLevel) {
+    if(gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+        if(userClickedPattern.length === gamePattern.length) {
+            console.log('success!');
+            setTimeout(function() {
+                nextSequence();
+            }, 1000);
+        }
+    } else {
+        console.log('wrong!');
+    }
+}
 
 //5.2. create a new sound function called playSound that takes in (name)
 function playSound(name) {
