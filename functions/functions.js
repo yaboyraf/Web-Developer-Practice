@@ -23,7 +23,7 @@ let convertFahrenheitToCelsius = function(temp) {
 }
 
 let tempOne = convertFahrenheitToCelsius(32)
-console.log(tempOne)
-
 let tempTwo = convertFahrenheitToCelsius(60)
+
+console.log(tempOne)
 console.log(tempTwo)
