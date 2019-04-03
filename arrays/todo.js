@@ -6,13 +6,13 @@ const todos = [{
     completed: true
 }, {
     text: 'Buy food',
-    completed: false
+    completed: true
 }, {
     text: 'Do work',
     completed: false
 }, {
     text: 'Exercise',
-    completed: true
+    completed: false
 }]
 
 const sortTodos = function(todos) {
