@@ -1,14 +1,12 @@
-//const todos = ['Wake up', 'Get dressed', 'go to work', 'do work', 'go home']
-
 const todos = [{
     text: 'Order cat food',
-    completed: true
-}, {
-    text: 'Clean kitchen',
     completed: false
 }, {
-    text: 'Buy food',
+    text: 'Clean kitchen',
     completed: true
+}, {
+    text: 'Buy food',
+    completed: false
 }, {
     text: 'Do work',
     completed: false
@@ -26,8 +24,13 @@ const deleteToDo = function (todos, todoText) {
     }
 }
 
-// 1. convert array to an array of objects -> text, completed
-// 2. create a function to remove a todo by text value 
+const getThingsToDo = function(todos) {
+    return todos.filter(function(todo) {
+        return !todo.completed
+    })
+}
 
-deleteToDo(todos, 'buy food!')
-console.log(todos)
+console.log(getThingsToDo(todos))
+
+//deleteToDo(todos, 'buy food!')
+//console.log(todos)
