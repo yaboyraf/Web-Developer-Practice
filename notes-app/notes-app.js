@@ -1,3 +1,14 @@
+const notes = [{
+    title: 'Next trip',
+    body: 'Travel somewhere'
+}, {
+    title: 'Habits to work on',
+    body: 'Working out'
+}, {
+    title: 'General organization',
+    body: 'Better cable management'
+}]
+
 // the DOM - Document Object Model
 
 // Query and remove
@@ -13,3 +24,8 @@ ps.forEach(function(p) {
     //console.log(p.textContent)
     // p remove
 })
+
+// Add a new element
+const newParagraph = document.createElement('p')
+newParagraph.textContent = 'New element from JavaScript'
+document.querySelector('body').appendChild(newParagraph)
