@@ -29,6 +29,10 @@ todos.forEach(function(todo) {
     document.querySelector('body').appendChild(p)
 })
 
+document.querySelector('#input-1').addEventListener('input', function(e) {
+    console.log(e.target.value)
+})
+
 // listen for new todo creation
 document.querySelector('#add-btn').addEventListener('click', function(ev) {
     ev.target.textContent = 'Todo added!'
