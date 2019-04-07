@@ -9,6 +9,12 @@ const notes = [{
     body: 'Better cable management'
 }]
 
-document.querySelector('button').addEventListener('click', function(e) {
-    e.target.textContent = 'AHHHHHHHHHH'
+document.querySelector('#add-btn').addEventListener('click', function(e) {
+    e.target.textContent = 'Notes Added!'
+})
+
+document.querySelector('#remove-all').addEventListener('click', function() {
+    document.querySelectorAll('.note').forEach(function(note) {
+        note.remove()
+    })
 })
