@@ -44,17 +44,18 @@ const renderTodos = function(todos, filters) {
 
 renderTodos(todos, filters)
 
-document.querySelector('#input-1').addEventListener('input', function(e) {
-    console.log(e.target.values)
-})
-
-// listen for new todo creation
-document.querySelector('#add-btn').addEventListener('click', function(ev) {
-    ev.target.textContent = 'Todo added!'
-})
-
 document.querySelector('#search-txt').addEventListener('input', function(e){
     filters.searchText = e.target.value
     renderTodos(todos, filters)
+})
+
+document.querySelector('#add-todo').addEventListener('submit', function(e) {
+    e.preventDefault()
+    todos.push({
+        text: e.target.elements.text.value,
+        completed: false
+    })
+    renderTodos(todos, filters)
+    e.target.elements.text.value = ''
 })
 
