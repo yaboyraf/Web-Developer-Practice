@@ -8,13 +8,16 @@
         <h1>Todo list</h1>
         <input id="search-txt" placeholder="filter your to-do's!" text="text">
         <label>
-                <input id="hide-complete" type="checkbox"> Hide completed todos
+            <input id="hide-complete" type="checkbox"> Hide completed todos
         </label>
-        <div id="todos"></div>
+        <div id="todos">
+            <h3>You have 0 todos left</h3>
+        </div>
         <form id="add-todo">
             <input type="text" placeholder="Add a new todo!" name="text">
             <button>SUBMIT</button>
         </form>
+        <script src="todo-functions.js"></script>
         <script src="todo-app.js"></script>
     </body>
 </html>
