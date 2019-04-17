@@ -32,10 +32,31 @@ const renderTodos = function (todos, filters) {
     })
 }
 
+// set up a root div 
+// set up and append a checkbox (set type attribute)
+// someNode.setAttribute('type', text)
+// set up and append a span (set text)
+// set up and append a button
+
 const generateTodoDOM = function (todo) {
-    const p = document.createElement('p')
-    p.textContent = todo.text
-    return p
+    const todoElements = document.createElement('div')
+    const checkbox = document.createElement('input')
+    const todoText = document.createElement('span')
+    const removeButton = document.createElement('button')
+
+    // set up todo checkbox
+    checkbox.setAttribute('type', 'checkbox')
+    todoElements.appendChild(checkbox)
+
+    // set up todo text
+    todoText.textContent = todo.text
+    todoElements.appendChild(todoText)
+
+    //set up the remove button
+    removeButton.textContent = 'x'
+    todoElements.appendChild(removeButton)
+
+    return todoElements
 }
 
 const generateSummaryDOM = function(incompleteTodos) {
