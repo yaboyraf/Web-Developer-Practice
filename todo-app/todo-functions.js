@@ -1,3 +1,8 @@
+// wire up button event
+// remove todo by id
+// save and rerender todos list
+
+
 const getSavedTodos = function() {
     const todosJSON = localStorage.getItem('todos')
 
@@ -8,11 +13,20 @@ const getSavedTodos = function() {
     }
 }
 
+const removeTodos = function(id) {
+    const todoIndex = todos.findIndex(function(todo) {
+        return todo.id === id
+    })
+    if(todoIndex > -1) {
+        todos.splice(todoIndex, 1)
+    }
+}
+
 const saveTodos = function(todos) {
     localStorage.setItem('todos', JSON.stringify(todos))
 }
 
-const renderTodos = function (todos, filters) {
+const renderTodos = function(todos, filters) {
     const filteredTodos = todos.filter(function (todo) {
         const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
         const hideCompletedMatch = !filters.hideCompleted || !todo.completed
@@ -55,6 +69,11 @@ const generateTodoDOM = function (todo) {
     //set up the remove button
     removeButton.textContent = 'x'
     todoElements.appendChild(removeButton)
+    removeButton.addEventListener('click', function() {
+        removeTodos(todo.id)
+        renderTodos(todos, filters)
+        saveTodos(todos)
+    })
 
     return todoElements
 }
