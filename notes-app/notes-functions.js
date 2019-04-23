@@ -32,7 +32,7 @@ const generateNoteDOM = function(note) {
     const button = document.createElement('button')
 
     // set up remove note button
-    button.textContent = 'x'
+    button.textContent = 'x' 
     noteElement.appendChild(button)
     button.addEventListener('click', function() {
         removeNote(note.id)
