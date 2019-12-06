@@ -5,22 +5,21 @@
 // <= less than or equal to operator
 // >= greater than or equal to operator 
 
-let temp = 32
-let isFreezing = temp <= 33
+let temp = 180
 
-console.log(isFreezing)
-
+if (temp <= 32) {
+    console.log('it is cold')
+}
+if (temp >= 110) {
+    console.log('it is hot')
+}
 // challenge area
 let age = 26 
 
-let isChild = age <= 7
-let isSenior = age >= 65
-
-console.log(isChild)
-console.log(isSenior)
-
-// create age set to your age
-// calculate is child - if THEY ARE 7 OR UNDER
-// calculate is senior - if they are 65 or older
-// print is child value
-// print is senior value
+// if 7 or under prints message about child pricing
+if (age <= 7) {
+    console.log(`congrats! you get to a child's discount`)
+} else if (age >= 65) {
+    console.log(`congrats! you get a senior discount`)
+}
+// if 65 or older print message about senior discount
