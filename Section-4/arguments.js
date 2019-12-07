@@ -24,3 +24,11 @@ let getTip = function (total, percentage = .2) {
 
 let tip = getTip(100, .20)
 console.log(tip)
+
+console.log('Andrew')
+
+// everything below is from a video about template strings. I just watched the video for consistency
+let name = 'Vikram'
+let age = 12
+
+console.log(`${name} is ${age} years old and he just learned about template strings`)
