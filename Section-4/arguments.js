@@ -28,6 +28,7 @@ console.log(tip)
 console.log('Andrew')
 
 // everything below is from a video about template strings. I just watched the video for consistency
+// yay studying!
 let name = 'Vikram'
 let age = 12
 
