@@ -18,3 +18,5 @@ let age = 27
 age = null
 
 console.log(age)
+
+//use this as a template for the project
