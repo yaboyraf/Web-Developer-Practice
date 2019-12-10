@@ -4,19 +4,23 @@
 
 // undefined for function arguments 
 // undefined as function return default value
-let gradeCalc = function (num) {
-    console.log(num)
+let gradeCalc = function (score, total) {
+    let percent = (score / total) * 100
+
+    if (percent >= 90) {
+        return `You got an A! (${percent}%). Wow you are smart`
+    } else if (percent >= 80) {
+        return `You got a B! (${percent}%). Good job!`
+    } else if (percent >= 70) {
+        return `You got a C (${percent}%). It's ok you can do better next time`
+    } else if (percent >= 60) {
+        return `You got a D (${percent}%). Wow, did you study???`
+    } else if (percent <= 59) {
+        return `You got an F (${percent}%). That's embarrassing.`
+    }
 }
 
-let result = square()
+let grade = gradeCalc(10, 20)
 
-console.log(result)
+console.log(grade)
 
-// null as assigned values
-let age = 27
-
-age = null
-
-console.log(age)
-
-//use this as a template for the project
