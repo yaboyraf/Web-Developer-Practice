@@ -15,7 +15,7 @@ let gradeCalc = function (score, total) {
         return `You got a C (${percent}%). It's ok you can do better next time`
     } else if (percent >= 60) {
         return `You got a D (${percent}%). Wow, did you study???`
-    } else if (percent <= 59) {
+    } else {
         return `You got an F (${percent}%). That's embarrassing.`
     }
 }
