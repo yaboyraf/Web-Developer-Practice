@@ -88,4 +88,5 @@ let myAccount = {
   addNote("I need to study and practice references");
   
   console.log("my notes are now: ", currentNotes);
-  
+
+  //
