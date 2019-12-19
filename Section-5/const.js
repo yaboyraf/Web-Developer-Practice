@@ -1,4 +1,4 @@
-const person = {
+let person = {
     age: 27
 };
 
