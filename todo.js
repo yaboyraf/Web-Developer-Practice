@@ -16,3 +16,18 @@ console.log(`You have ${todo.length} todos on your todo list`)
 console.log(todo.splice(2, 1))
 console.log(todo.push('Study'))
 console.log(todo.shift())
+
+// callback function!!
+// 1. the first item
+// 2. the second item
+
+todo.forEach(function (todo, index) {
+    const num = index + 1
+    console.log(`${num}. ${todo}`)
+})
+
+for (let count = 0; count < todo.length; count++) {
+    const num = count + 1 
+    const todos = todo[count]
+    console.log(`${num}. ${todos}`)
+}
