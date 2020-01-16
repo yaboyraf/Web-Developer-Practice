@@ -1,35 +1,31 @@
-// create an array with five todos
-// you have x todos
-// print the first and second to last items -> Todo: aklsjdalk
+const todo = [{
+  text:'Wake up',
+  completed: true
+}, {
+  text:'Go to work',
+  completed: false
+}, {
+  text:'Work',
+  completed: false
+}, {
+  text:'Go home',
+  completed: true
+}, {
+  text:'Go to sleep',
+  completed: false
+}]
 
-const todo = ['Wake up', 'Go to work', 'Work', 'Go home', 'Go to sleep']
-
-console.log(`You have ${todo.length} todos on your todo list`)
-// console.log(`Todo #1: ${todo[0]}`)
-// console.log(`Todo #4: ${todo[todo.length - 2]}`)
-
-// array challenge
-// delete the third item
-// add a new item onto the end
-// remove the first item from the list
-
-console.log(todo.splice(2, 1))
-console.log(todo.push('Study'))
-console.log(todo.shift())
-
-// callback function!!
-// 1. the first item
-// 2. the second item
-
-todo.forEach(function (todo, index) {
-    const num = index + 1
-    console.log(`${num}. ${todo}`)
-})
-
-for (let count = 0; count < todo.length; count++) {
-    const num = count + 1 
-    const todos = todo[count]
-    console.log(`${num}. ${todos}`)
+const deleteTodo = function(todo, todoText) {
+  const index = todo.findIndex(function (todo) {
+    return todo.text.toLowerCase() === todoText.toLowerCase()
+  })
+  if (index > -1) {
+    todo.splice(index, 1)
+  }
 }
+// 1. convert array to array of objects -> text, completed
+// 2. create function to remove a to-do by text value
 
+deleteTodo(todo, 'go to work')
+console.log(todo)
   
