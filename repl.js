@@ -23,3 +23,36 @@ const person = {
   person.addMoney(5);
   const rafsMoney = person.money;
   console.log('rafs money is: ', rafsMoney) // 10;
+
+  // REFERENCES
+
+  // let myBook = {
+//   title: '1984',
+//   author: 'George Orwell',
+//   pageCount: 326
+// }
+
+// let getSummary = function(book) {
+//   return {
+//     summary: `${book.title} by ${book.author}`
+//   }
+// }
+
+// console.log(getSummary(myBook))
+
+// let x = 'Raf';
+// let y = x; // y = 'Raf'
+// y = 'Marielle';
+// console.log({ x, y });
+
+let x = {
+  name: 'Raf',
+  age: 0,
+  sayHi: function sayHi() { console.log('hi')},
+  sayMyName: function () { console.log(`Hi my name is ${this.name}`)},
+};
+// let y = x;
+// y.name = 'Gerry'; // x.name = 'Gerry'; because y just refers to x
+// y.sayHi();
+// console.log({ x, y })
+console.log(x);
